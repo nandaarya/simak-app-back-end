@@ -1,4 +1,5 @@
 const { addClassHandler } = require('./handler/addClassHandler');
+const { getAllClassesHandler } = require('./handler/getAllClassesHandler');
 
 const routes = [
   {
@@ -9,7 +10,7 @@ const routes = [
   {
     method: 'GET',
     path: '/api/jadwal',
-    handler: () => {},
+    handler: getAllClassesHandler,
   },
 ];
 

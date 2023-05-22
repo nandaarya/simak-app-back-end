@@ -1,0 +1,39 @@
+{
+    "status": "success",
+    "data": {
+        "classes": [
+            {
+                "classCode": "Kode Kelas Kelas A",
+                "className": "Kelas A",
+                "material": "Introduction to Programming",
+                "startedAt": "09:00",
+                "finishAt": "11:00",
+                "room": "101"
+            },
+            {
+                "classCode": "Kode Kelas Kelas A",
+                "className": "Kelas A",
+                "material": "Introduction to Programming",
+                "startedAt": "09:00",
+                "finishAt": "11:00",
+                "room": "101"
+            },
+            {
+                "classCode": "Kode Kelas Kelas B",
+                "className": "Kelas B",
+                "material": "Introduction to Programming",
+                "startedAt": "09:00",
+                "finishAt": "11:00",
+                "room": "101"
+            },
+            {
+                "classCode": "Kode Kelas Kelas C",
+                "className": "Kelas C",
+                "material": "Introduction to Programming",
+                "startedAt": "09:00",
+                "finishAt": "11:00",
+                "room": "101"
+            }
+        ]
+    }
+}
