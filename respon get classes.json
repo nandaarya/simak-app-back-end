@@ -3,36 +3,31 @@
     "data": {
         "classes": [
             {
-                "classCode": "Kode Kelas Kelas A",
-                "className": "Kelas A",
-                "material": "Introduction to Programming",
-                "startedAt": "09:00",
-                "finishAt": "11:00",
-                "room": "101"
+                "classCode": "Kode Kelas NamaKelas",
+                "className": "NamaKelas",
+                "lecturer": "Dosen",
+                "material": "Materi",
+                "startedAt": "2022-01-01",
+                "finishAt": "2022-01-31",
+                "room": "Ruangan"
             },
             {
-                "classCode": "Kode Kelas Kelas A",
-                "className": "Kelas A",
-                "material": "Introduction to Programming",
-                "startedAt": "09:00",
-                "finishAt": "11:00",
-                "room": "101"
+                "classCode": "Kode Kelas NamaKelas",
+                "className": "NamaKelas",
+                "lecturer": "Dosen",
+                "material": "Materi",
+                "startedAt": "2022-01-01",
+                "finishAt": "2022-01-31",
+                "room": "Ruangan"
             },
             {
-                "classCode": "Kode Kelas Kelas B",
-                "className": "Kelas B",
-                "material": "Introduction to Programming",
-                "startedAt": "09:00",
-                "finishAt": "11:00",
-                "room": "101"
-            },
-            {
-                "classCode": "Kode Kelas Kelas C",
-                "className": "Kelas C",
-                "material": "Introduction to Programming",
-                "startedAt": "09:00",
-                "finishAt": "11:00",
-                "room": "101"
+                "classCode": "Kode Kelas NamaKelas",
+                "className": "NamaKelas",
+                "lecturer": "Dosen",
+                "material": "Materi",
+                "startedAt": "2022-01-01",
+                "finishAt": "2022-01-31",
+                "room": "Ruangan"
             }
         ]
     }

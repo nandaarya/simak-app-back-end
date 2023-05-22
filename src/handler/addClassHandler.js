@@ -2,10 +2,10 @@ const classes = require('../classes');
 
 const addClassHandler = (request, h) => {
   const {
-    className, material, startedAt, finishAt, room,
+    className, lecturer, material, startedAt, finishAt, room,
   } = request.payload;
 
-  if (!className || !material || !startedAt || !finishAt || !room) {
+  if (!className || !lecturer || !material || !startedAt || !finishAt || !room) {
     const response = h.response({
       status: 'fail',
       message: 'Data jadwal kelas tidak lengkap',
@@ -17,7 +17,7 @@ const addClassHandler = (request, h) => {
   const classCode = `Kode Kelas ${className}`;
 
   const newClass = {
-    classCode, className, material, startedAt, finishAt, room,
+    classCode, className, lecturer, material, startedAt, finishAt, room,
   };
   classes.push(newClass);
 
