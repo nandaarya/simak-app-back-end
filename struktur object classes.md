@@ -1,6 +1,6 @@
 {
  classCode: string,
- class: string,
+ className: string,
  lecturer: string,
  material: string,
  startedAt: string,
@@ -11,7 +11,7 @@
 
 {
  classCode: 'TIF414020 A22232 4',
- class: 'Perancangan Algoritma dan Pemrograman A',
+ className: 'Perancangan Algoritma dan Pemrograman A',
  lecturer: 'Dwi Otik Kurniawati, M.Eng.',
  material: 'Hello World C++',
  startedAt: 'Sabtu, 20 Mei 2023 22:42 WIB',

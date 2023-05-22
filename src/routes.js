@@ -1,12 +1,12 @@
 const routes = [
   {
     method: 'POST',
-    path: '/classes',
+    path: '/api/jadwal',
     handler: () => {},
   },
   {
     method: 'GET',
-    path: '/classes',
+    path: '/api/jadwal',
     handler: () => {},
   },
 ];
