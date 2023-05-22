@@ -1,4 +1,4 @@
-const { addClassHandler } = require('./handler');
+const { addClassHandler } = require('./handler/addClassHandler');
 
 const routes = [
   {

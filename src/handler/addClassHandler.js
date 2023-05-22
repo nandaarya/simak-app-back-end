@@ -1,4 +1,4 @@
-const classes = require('./classes');
+const classes = require('../classes');
 
 const addClassHandler = (request, h) => {
   const {
