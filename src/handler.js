@@ -5,6 +5,14 @@ const addClassHandler = (request, h) => {
     className, material, startedAt, finishAt, room,
   } = request.payload;
 
+  if (!className || !material || !startedAt || !finishAt || !room) {
+    const response = h.response({
+      status: 'fail',
+      message: 'Data jadwal kelas tidak lengkap',
+    }).code(400);
+    return response;
+  }
+
   // Generate classCode (Temporary)
   const classCode = `Kode Kelas ${className}`;
 
@@ -13,7 +21,7 @@ const addClassHandler = (request, h) => {
   };
   classes.push(newClass);
 
-  const isSuccess = classes.filter((jadwal) => jadwal.classCode === classCode);
+  const isSuccess = classes.some((jadwal) => jadwal.classCode === classCode);
 
   if (isSuccess) {
     const response = h.response({

@@ -1,8 +1,10 @@
+const { addClassHandler } = require('./handler');
+
 const routes = [
   {
     method: 'POST',
     path: '/api/jadwal',
-    handler: () => {},
+    handler: addClassHandler,
   },
   {
     method: 'GET',
