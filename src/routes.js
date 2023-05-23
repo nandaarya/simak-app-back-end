@@ -7,11 +7,11 @@ const routes = [
   {
     method: 'POST',
     path: '/api/jadwal',
-    config: {
-      payload: {
-        allow: 'application/json',
-      },
-    },
+    // config: {
+    //   payload: {
+    //     allow: 'application/json',
+    //   },
+    // },
     handler: addClassHandler,
   },
   {
