@@ -1,0 +1,27 @@
+{
+    "status": "success",
+    "data": {
+        "attendanceList": [
+            {
+                "nim": "123456",
+                "classCode": "CS101",
+                "status": "Hadir"
+            },
+            {
+                "nim": "123456",
+                "classCode": "CS101",
+                "status": "Hadir"
+            },
+            {
+                "nim": "123456",
+                "classCode": "CS101",
+                "status": "Hadir"
+            },
+            {
+                "nim": "123456",
+                "classCode": "CS101",
+                "status": "Hadir"
+            }
+        ]
+    }
+}
