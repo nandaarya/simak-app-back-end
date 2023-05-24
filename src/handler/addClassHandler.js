@@ -1,4 +1,3 @@
-// const classes = require('../classes');
 const Class = require('../models/classes');
 
 const addClassHandler = async (request, h) => {
@@ -41,28 +40,6 @@ const addClassHandler = async (request, h) => {
     response.code(500);
     return response;
   }
-
-  // classes.push(newClass);
-
-  // const isSuccess = classes.some((jadwal) => jadwal.classCode === classCode);
-
-  // if (isSuccess) {
-  //   const response = h.response({
-  //     status: 'success',
-  //     message: 'Jadwal Kelas berhasil ditambahkan',
-  //     data: {
-  //       classCode,
-  //     },
-  //   });
-  //   response.code(201);
-  //   return response;
-  // }
-  // const response = h.response({
-  //   status: 'fail',
-  //   message: 'Jadwal Kelas gagal ditambahkan',
-  // });
-  // response.code(500);
-  // return response;
 };
 
 module.exports = { addClassHandler };

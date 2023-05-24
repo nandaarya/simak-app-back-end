@@ -1,4 +1,3 @@
-// const attendanceList = require('../attendanceList');
 const Attendance = require('../models/attendances');
 
 const getAllAttendanacesHandler = async () => {

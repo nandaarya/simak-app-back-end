@@ -1,4 +1,3 @@
-// const attendanceList = require('../attendanceList');
 const Attendance = require('../models/attendances');
 
 const addAttendanceHandler = async (request, h) => {
@@ -33,29 +32,6 @@ const addAttendanceHandler = async (request, h) => {
     response.code(500);
     return response;
   }
-
-  // attendanceList.push(newAttendance);
-
-  // const isSuccess = attendanceList.some((presensi) => presensi.classCode === classCode
-  // && presensi.nim === nim);
-
-  // if (isSuccess) {
-  //   const response = h.response({
-  //     status: 'success',
-  //     message: 'Presensi berhasil',
-  //     data: {
-  //       classCode,
-  //     },
-  //   });
-  //   response.code(201);
-  //   return response;
-  // }
-  // const response = h.response({
-  //   status: 'fail',
-  //   message: 'Presensi gagal',
-  // });
-  // response.code(500);
-  // return response;
 };
 
 module.exports = { addAttendanceHandler };
