@@ -29,7 +29,7 @@ const getAllClassesHandler = async () => {
     console.log(error);
     return {
       status: 'error',
-      message: 'Something went wrong.',
+      message: error,
     };
   }
 };
