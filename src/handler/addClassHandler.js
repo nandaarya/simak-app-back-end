@@ -1,6 +1,7 @@
-const classes = require('../classes');
+// const classes = require('../classes');
+const Class = require('../models/classes');
 
-const addClassHandler = (request, h) => {
+const addClassHandler = async (request, h) => {
   const {
     className, lecturer, material, startedAt, finishAt, room,
   } = request.payload;
@@ -16,14 +17,12 @@ const addClassHandler = (request, h) => {
   // Generate classCode (Temporary)
   const classCode = `Kode Kelas ${className}`;
 
-  const newClass = {
+  const newClass = new Class({
     classCode, className, lecturer, material, startedAt, finishAt, room,
-  };
-  classes.push(newClass);
+  });
 
-  const isSuccess = classes.some((jadwal) => jadwal.classCode === classCode);
-
-  if (isSuccess) {
+  try {
+    await newClass.save();
     const response = h.response({
       status: 'success',
       message: 'Jadwal Kelas berhasil ditambahkan',
@@ -33,13 +32,37 @@ const addClassHandler = (request, h) => {
     });
     response.code(201);
     return response;
+  } catch (error) {
+    console.log('err', error);
+    const response = h.response({
+      status: 'fail',
+      message: `Jadwal Kelas gagal ditambahkan karena ${error}`,
+    });
+    response.code(500);
+    return response;
   }
-  const response = h.response({
-    status: 'fail',
-    message: 'Jadwal Kelas gagal ditambahkan',
-  });
-  response.code(500);
-  return response;
+
+  // classes.push(newClass);
+
+  // const isSuccess = classes.some((jadwal) => jadwal.classCode === classCode);
+
+  // if (isSuccess) {
+  //   const response = h.response({
+  //     status: 'success',
+  //     message: 'Jadwal Kelas berhasil ditambahkan',
+  //     data: {
+  //       classCode,
+  //     },
+  //   });
+  //   response.code(201);
+  //   return response;
+  // }
+  // const response = h.response({
+  //   status: 'fail',
+  //   message: 'Jadwal Kelas gagal ditambahkan',
+  // });
+  // response.code(500);
+  // return response;
 };
 
 module.exports = { addClassHandler };

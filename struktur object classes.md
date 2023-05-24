@@ -6,7 +6,7 @@
  startedAt: string,
  finishAt: string,
  room: string,
- status: string,
+ <!-- status: string, -->
 },
 
 {
