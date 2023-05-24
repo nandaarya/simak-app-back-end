@@ -1,6 +1,7 @@
-const attendanceList = require('../attendanceList');
+// const attendanceList = require('../attendanceList');
+const Attendance = require('../models/attendances');
 
-const addAttendanceHandler = (request, h) => {
+const addAttendanceHandler = async (request, h) => {
   const { nim, classCode } = request.payload;
 
   if (!nim || !classCode) {
@@ -13,30 +14,48 @@ const addAttendanceHandler = (request, h) => {
 
   const status = 'Hadir';
 
-  const newAttendance = { nim, classCode, status };
+  const newAttendance = new Attendance({ nim, classCode, status });
 
-  attendanceList.push(newAttendance);
-
-  const isSuccess = attendanceList.some((presensi) => presensi.classCode === classCode
-  && presensi.nim === nim);
-
-  if (isSuccess) {
+  try {
+    await newAttendance.save();
     const response = h.response({
       status: 'success',
-      message: 'Presensi berhasil',
-      data: {
-        classCode,
-      },
+      message: 'Presensi Berhasil',
     });
     response.code(201);
     return response;
+  } catch (error) {
+    console.log('err', error);
+    const response = h.response({
+      status: 'fail',
+      message: `Presensi Gagal karena ${error}`,
+    });
+    response.code(500);
+    return response;
   }
-  const response = h.response({
-    status: 'fail',
-    message: 'Presensi gagal',
-  });
-  response.code(500);
-  return response;
+
+  // attendanceList.push(newAttendance);
+
+  // const isSuccess = attendanceList.some((presensi) => presensi.classCode === classCode
+  // && presensi.nim === nim);
+
+  // if (isSuccess) {
+  //   const response = h.response({
+  //     status: 'success',
+  //     message: 'Presensi berhasil',
+  //     data: {
+  //       classCode,
+  //     },
+  //   });
+  //   response.code(201);
+  //   return response;
+  // }
+  // const response = h.response({
+  //   status: 'fail',
+  //   message: 'Presensi gagal',
+  // });
+  // response.code(500);
+  // return response;
 };
 
 module.exports = { addAttendanceHandler };
