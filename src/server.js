@@ -1,21 +1,37 @@
 const Hapi = require('@hapi/hapi');
+const mongoose = require('mongoose');
 const routes = require('./routes');
+require('dotenv').config();
 
-const init = async () => {
-  const server = Hapi.server({
-    port: 5000,
-    host: 'localhost',
-    routes: {
-      cors: {
-        origin: ['*'],
-      },
+const server = Hapi.server({
+  port: process.env.PORT || 3000,
+  host: 'localhost',
+  routes: {
+    cors: {
+      origin: ['*'],
     },
-  });
+  },
+});
 
-  server.route(routes);
-
-  await server.start();
-  console.log(`Server berjalan pada ${server.info.uri}`);
+mongoose.set('strictQuery', false);
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
 };
 
-init();
+server.route(routes);
+
+// Connect to the database before starting the server
+connectDB().then(() => {
+  server.start().then(() => {
+    console.log('Server running at:', server.info.uri);
+  }).catch((err) => {
+    console.log(err);
+    process.exit(1);
+  });
+});

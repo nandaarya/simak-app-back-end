@@ -2,6 +2,7 @@ const { addAttendanceHandler } = require('./handler/addAttendanceHandler');
 const { addClassHandler } = require('./handler/addClassHandler');
 const { getAllAttendanacesHandler } = require('./handler/getAllAttendancesHandler');
 const { getAllClassesHandler } = require('./handler/getAllClassesHandler');
+const { tesDatabaseHandler } = require('./handler/tesDatabaseHandler');
 
 const routes = [
   {
@@ -23,6 +24,11 @@ const routes = [
     method: 'GET',
     path: '/api/presensi',
     handler: getAllAttendanacesHandler,
+  },
+  {
+    method: 'GET',
+    path: '/api/database',
+    handler: tesDatabaseHandler,
   },
 ];
 
