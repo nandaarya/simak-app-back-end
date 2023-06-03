@@ -1,9 +1,7 @@
-const { getBooksHandler } = require('./handler/GetDatabaseHandler');
 const { addAttendanceHandler } = require('./handler/addAttendanceHandler');
 const { addClassHandler } = require('./handler/addClassHandler');
 const { getAllAttendanacesHandler } = require('./handler/getAllAttendancesHandler');
 const { getAllClassesHandler } = require('./handler/getAllClassesHandler');
-const { addBookHandler } = require('./handler/tesDatabaseHandler');
 
 const routes = [
   {
@@ -25,16 +23,6 @@ const routes = [
     method: 'GET',
     path: '/api/presensi',
     handler: getAllAttendanacesHandler,
-  },
-  {
-    method: 'POST',
-    path: '/api/database',
-    handler: addBookHandler,
-  },
-  {
-    method: 'GET',
-    path: '/api/database',
-    handler: getBooksHandler,
   },
 ];
 
