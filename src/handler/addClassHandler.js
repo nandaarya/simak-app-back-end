@@ -13,8 +13,29 @@ const addClassHandler = async (request, h) => {
     return response;
   }
 
+  function generateClassCode() {
+    switch (className) {
+      case 'Grafis dan Visualisasi':
+        return 'TIF414022';
+      case 'Interaksi Manusia dan Komputer':
+        return 'TIF414021';
+      case 'Perancangan Struktur Data':
+        return 'TIF414018';
+      case 'Basis Data':
+        return 'TIF414020';
+      case 'Metode Pengembangan Perangkat Lunak':
+        return 'TIF414019';
+      case 'Perancangan Algoritma dan Pemrograman':
+        return 'TIF414017';
+      case 'Rekayasa Perangkat Lunak':
+        return 'TIF414016';
+      default:
+        return null;
+    }
+  }
+
   // Generate classCode (Temporary)
-  const classCode = `Kode Kelas ${className}`;
+  const classCode = generateClassCode() + material;
 
   const newClass = new Class({
     classCode, className, lecturer, material, startedAt, finishAt, room,
