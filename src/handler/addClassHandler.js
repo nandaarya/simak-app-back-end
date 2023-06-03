@@ -15,19 +15,19 @@ const addClassHandler = async (request, h) => {
 
   function generateClassCode() {
     switch (className) {
-      case 'Grafis dan Visualisasi':
+      case 'Grafis dan Visualisasi A':
         return 'TIF414022';
-      case 'Interaksi Manusia dan Komputer':
+      case 'Interaksi Manusia dan Komputer B':
         return 'TIF414021';
-      case 'Perancangan Struktur Data':
+      case 'Perancangan Struktur Data A':
         return 'TIF414018';
-      case 'Basis Data':
+      case 'Basis Data A':
         return 'TIF414020';
-      case 'Metode Pengembangan Perangkat Lunak':
+      case 'Metode Pengembangan Perangkat Lunak A':
         return 'TIF414019';
-      case 'Perancangan Algoritma dan Pemrograman':
+      case 'Perancangan Algoritma dan Pemrograman A':
         return 'TIF414017';
-      case 'Rekayasa Perangkat Lunak':
+      case 'Rekayasa Perangkat Lunak A':
         return 'TIF414016';
       default:
         return null;
