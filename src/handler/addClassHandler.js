@@ -35,7 +35,7 @@ const addClassHandler = async (request, h) => {
   }
 
   // Generate classCode (Temporary)
-  const classCode = generateClassCode(className) + material;
+  const classCode = `${generateClassCode(className)}-${material}`;
 
   const newClass = new Class({
     classCode, className, lecturer, material, startedAt, finishAt, room,
