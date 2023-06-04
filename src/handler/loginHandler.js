@@ -18,7 +18,7 @@ const loginHandler = async (request, h) => {
     // Tidak ada pengguna dengan nama pengguna yang diberikan
     const response = h.response({
       status: 'fail',
-      message: 'Username anda salah',
+      message: 'Username salah',
     }).code(401);
     return response;
   }
