@@ -32,4 +32,6 @@ username, password, email, nama, nim_nip, role,
 
 curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"21106050048\",\"password\":\"21106050048\",\"email\":\"21106050048@student.uin-suka.ac.id\",\"nama\":\"Nanda Arya Putra\",\"nim_nip\":\"21106050048\",\"role\":\"mahasiswa\"}" https://simak-back-end.cyclic.app/api/users/register
 
+curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"21106050048\",\"password\":\"21106050048\"}" https://simak-back-end.cyclic.app/api/users/login
+
 keytool -genkey -v -keystore simak_keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias nandaaryaputra

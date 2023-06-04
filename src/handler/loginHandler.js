@@ -28,6 +28,9 @@ const loginHandler = async (request, h) => {
     const response = h.response({
       status: 'success',
       message: 'Login berhasil',
+      data: {
+        user,
+      },
     }).code(200);
     return response;
   }
