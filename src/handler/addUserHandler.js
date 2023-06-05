@@ -3,10 +3,10 @@ const User = require('../models/users');
 
 const addUserHandler = async (request, h) => {
   const {
-    username, password, email, nama, nim_nip, role,
+    username, password, email, name, nim_nip, role,
   } = request.payload;
 
-  if (!username || !password || !email || !nama || !nim_nip || !role) {
+  if (!username || !password || !email || !name || !nim_nip || !role) {
     const response = h.response({
       status: 'fail',
       message: 'Data user tidak lengkap',
@@ -15,7 +15,7 @@ const addUserHandler = async (request, h) => {
   }
 
   const newUser = new User({
-    username, password, email, nama, nim_nip, role,
+    username, password, email, name, nim_nip, role,
   });
 
   try {
