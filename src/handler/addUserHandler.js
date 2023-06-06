@@ -14,6 +14,17 @@ const addUserHandler = async (request, h) => {
     return response;
   }
 
+  // Mengecek apakah sudah ada akun dengan username atau email yang sama
+  const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+
+  if (existingUser) {
+    const response = h.response({
+      status: 'fail',
+      message: 'Username atau email sudah digunakan',
+    }).code(409);
+    return response;
+  }
+
   const newUser = new User({
     username, password, email, name, nim_nip, role,
   });

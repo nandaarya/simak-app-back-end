@@ -30,7 +30,7 @@ curl -X POST -H "Content-Type: application/json" -d "{\"nim\":\"21106050048\",\"
 
 username, password, email, nama, nim_nip, role,
 
-curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"21106050055\",\"password\":\"21106050055\",\"email\":\"21106050055@student.uin-suka.ac.id\",\"nama\":\"Chalisun Firifqah\",\"nim_nip\":\"21106050055\",\"role\":\"mahasiswa\"}" https://simak-back-end.cyclic.app/api/users/register
+curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"21106050048\",\"password\":\"21106050048\",\"email\":\"21106050048@student.uin-suka.ac.id\",\"name\":\"Nanda Arya Putra\",\"nim_nip\":\"21106050048\",\"role\":\"mahasiswa\"}" https://simak-back-end.cyclic.app/api/users/register
 
 curl -X POST -H "Content-Type: application/json" -d "{\"username\":\"21106050048\",\"password\":\"21106050048\"}" https://simak-back-end.cyclic.app/api/users/login
 
