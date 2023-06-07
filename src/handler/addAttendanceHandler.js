@@ -11,6 +11,17 @@ const addAttendanceHandler = async (request, h) => {
     return response;
   }
 
+  // Cek apakah sudah ada presensi dengan NIM dan classCode yang diberikan
+  const existingAttendance = await Attendance.findOne({ nim, classCode });
+
+  if (existingAttendance) {
+    const response = h.response({
+      status: 'fail',
+      message: 'Anda sudah melakukan presensi untuk kelas ini!',
+    }).code(409); // Gunakan kode status 409 (Conflict) untuk data yang sudah ada
+    return response;
+  }
+
   const status = 'Hadir';
 
   const newAttendance = new Attendance({ nim, classCode, status });
