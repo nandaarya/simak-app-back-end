@@ -1,8 +1,17 @@
+/* eslint-disable camelcase */
 const Attendance = require('../models/attendances');
 
-const getAllAttendanacesHandler = async () => {
+const getAllAttendanacesHandler = async (request) => {
+  const { nim_nip } = request.query;
+
   try {
-    const attendances = await Attendance.find();
+    let attendances;
+    if (nim_nip) {
+      attendances = await Attendance.find({ nim_nip });
+    } else {
+      attendances = await Attendance.find();
+    }
+
     return {
       status: 'success',
       data: {
