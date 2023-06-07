@@ -2,12 +2,12 @@
 const Attendance = require('../models/attendances');
 
 const getAllAttendanacesHandler = async (request) => {
-  const { nim_nip } = request.query;
+  const { nim } = request.query;
 
   try {
     let attendances;
-    if (nim_nip) {
-      attendances = await Attendance.find({ nim_nip });
+    if (nim) {
+      attendances = await Attendance.find({ nim });
     } else {
       attendances = await Attendance.find();
     }
