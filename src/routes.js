@@ -39,7 +39,7 @@ const routes = [
   },
   {
     method: 'PUT',
-    path: '/api/users',
+    path: '/api/users/{username}',
     handler: updateUserDataHandler,
   },
 ];

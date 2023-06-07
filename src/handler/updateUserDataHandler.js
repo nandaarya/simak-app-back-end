@@ -6,7 +6,7 @@ const updateUserDataHandler = async (request, h) => {
   const { name, email, nim_nip } = request.payload; // Data yang akan diubah
 
   try {
-    // Mengecek apakah user dengan ID yang diberikan ada di database
+    // Mencari user berdasarkan username
     const existingUser = await User.findOne({ username });
     if (!existingUser) {
       const response = h.response({
