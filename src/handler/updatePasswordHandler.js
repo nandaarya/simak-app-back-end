@@ -10,7 +10,7 @@ const updatePasswordHandler = async (request, h) => {
     if (!existingUser) {
       const response = h.response({
         status: 'fail',
-        message: 'User tidak ditemukan',
+        message: 'Username salah / tidak ditemukan',
       }).code(404);
       return response;
     }
