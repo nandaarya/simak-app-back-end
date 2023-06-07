@@ -4,6 +4,7 @@ const { addUserHandler } = require('./handler/addUserHandler');
 const { getAllAttendanacesHandler } = require('./handler/getAllAttendancesHandler');
 const { getAllClassesHandler } = require('./handler/getAllClassesHandler');
 const { loginHandler } = require('./handler/loginHandler');
+const { updatePasswordHandler } = require('./handler/updatePasswordHandler');
 const { updateUserDataHandler } = require('./handler/updateUserDataHandler');
 
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
     method: 'PUT',
     path: '/api/users/{username}',
     handler: updateUserDataHandler,
+  },
+  {
+    method: 'PUT',
+    path: '/api/users/updatePassword/{username}',
+    handler: updatePasswordHandler,
   },
 ];
 
